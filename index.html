@@ -1,13 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple HTML Document</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple HTML document.</p>
-    <p>Heres to continuing to learn and grow together! Let's keep exploring new ideas and expanding our knowledge.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Changer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asimovian&family=Noto+Sans+JP:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Asimovian", sans-serif;
+      }
+      /* obsidian blue */
+      :root {
+        --background: #f8fafc;
+        --surface: #ffffff;
+        --primary: #2563eb;
+        --secondary: #3b82f6;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --box-shadow: 1px 1px 20px hsl(from var(--secondary) h s l / 0.7);
+      }
+      .darkmode {
+        --background: #0a0a0a;
+        --surface: #141414;
+        --primary: #3b82f6;
+        --secondary: #60a5fa;
+        --text: #f5f5f5;
+        --muted: #a3a3a3;
+        --border: #262626;
+        --box-shadow: 1px 1px 20px hsl(from var(--secondary) h s l / 0.7);
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--text);
+        transition: 0.25s ease;
+      }
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4em;
+        height: 100vh;
+        @media all and (max-width: 600px) {
+          flex-direction: column;
+          gap: 2em;
+        }
+      }
+      .hero img {
+        width: 180px;
+        height: 180px;
+        border: solid 1px var(--border);
+        background-color: var(--surface);
+        display: block;
+        border-radius: 50%;
+      }
+      .hero article {
+        /* height: 100vh; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        & h1,
+        & h2 {
+          text-align: center;
+        }
+        & h1 {
+          color: var(--primary);
+          font-size: clamp(4em, calc(10vw - 1em), 6em);
+        }
+        & h2 {
+          color: var(--secondary);
+        }
+        div {
+          margin-top: 2em;
+          display: flex;
+          gap: 1em;
+          & button {
+            background-color: var(--surface);
+            border: solid 2px var(--primary);
+            color: var(--text);
+            padding: 1em 2em;
+            border-radius: 10px;
+          }
+        }
+      }
+      .more {
+        margin: 2em;
+        border: solid 2px var(--border);
+        padding: 2em;
+        background-color: var(--surface);
+        border-radius: 20px;
+        box-shadow: var(--box-shadow);
+        & h3 {
+          text-align: center;
+          font-size: 2em;
+          margin-bottom: 0.5em;
+        }
+      }
+      aside {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--surface);
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: var(--box-shadow);
+        & svg {
+          fill: var(--secondary);
+        }
+        & svg:last-child {
+          display: none;
+        }
+      }
+      .darkmode aside {
+        & svg:first-child {
+          display: none;
+        }
+        & svg:last-child {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <img src="file_00000000b93081f7a03d55e11311c132.png" alt="" />
+      <article>
+        <h1>Welcome</h1>
+        <h2>Jeff's Website</h2>
+        <div>
+          <button>About Me</button>
+          <button>Contact</button>
+        </div>
+      </article>
+    </section>
+    <section class="more">
+      <h3>About me</h3>
+      <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam rem
+        doloremque molestiae sed. Soluta magni quos magnam, architecto
+        reiciendis ab voluptas quasi molestias quam optio reprehenderit
+        consequatur, distinctio quaerat odio. Ad, exercitationem assumenda
+        ipsum, quam tenetur provident eaque quasi necessitatibus ex, deserunt
+        fugiat quos sunt unde consequatur. Ea, vitae nulla.
+      </div>
+    </section>
+    <aside>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#1f1f1f"
+      >
+        <path
+          d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#1f1f1f"
+      >
+        <path
+          d="M565-395q35-35 35-85t-35-85q-35-35-85-35t-85 35q-35 35-35 85t35 85q35 35 85 35t85-35Zm-226.5 56.5Q280-397 280-480t58.5-141.5Q397-680 480-680t141.5 58.5Q680-563 680-480t-58.5 141.5Q563-280 480-280t-141.5-58.5ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"
+        />
+      </svg>
+    </aside>
+    <script>
+      let themeSwitch = document.querySelector("aside");
+      themeSwitch.addEventListener("click", () => {
+        document.body.classList.toggle("darkmode");
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("darkmode") ? "dark" : "light",
+        );
+      });
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("darkmode");
+      }
+      const systemTheme = window.matchMedia("(prefers-color-scheme:dark)");
+      if (systemTheme.matches) {
+        console.log(`System is using dark mode`);
+      } else {
+        console.log(`System is not using dark mode`);
+      }
+    </script>
+  </body>
 </html>
