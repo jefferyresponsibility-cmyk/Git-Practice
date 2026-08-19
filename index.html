@@ -17,8 +17,30 @@
         box-sizing: border-box;
         font-family: "Asimovian", sans-serif;
       }
-      /* obsidian blue */
+      .darkmode {
+        --background: #07111f;
+        --surface: #0d1b2a;
+        --primary: #22d3ee;
+        --secondary: #67e8f9;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --border: #1e293b;
+        --box-shadow: 1px 1px 20px hsl(from var(--border) h s l / 0.7);
+      }
+
       :root {
+        --background: #f0fdff;
+        --surface: #ffffff;
+        --primary: #0891b2;
+        --secondary: #06b6d4;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #cffafe;
+        --box-shadow: 1px 1px 20px hsl(from var(--border) h s l / 0.7);
+      }
+
+      /* obsidian blue */
+      /* :root {
         --background: #f8fafc;
         --surface: #ffffff;
         --primary: #2563eb;
@@ -26,7 +48,7 @@
         --text: #0f172a;
         --muted: #64748b;
         --border: #e2e8f0;
-        --box-shadow: 1px 1px 20px hsl(from var(--secondary) h s l / 0.7);
+        --box-shadow: 1px 1px 20px hsl(from var(--border) h s l / 0.7);
       }
       .darkmode {
         --background: #0a0a0a;
@@ -36,8 +58,8 @@
         --text: #f5f5f5;
         --muted: #a3a3a3;
         --border: #262626;
-        --box-shadow: 1px 1px 20px hsl(from var(--secondary) h s l / 0.7);
-      }
+        --box-shadow: 1px 1px 20px hsl(from var(--border) h s l / 0.7);
+      } */
 
       body {
         background-color: var(--background);
@@ -56,12 +78,9 @@
         }
       }
       .hero img {
-        width: 180px;
-        height: 180px;
-        border: solid 1px var(--border);
-        background-color: var(--surface);
+        width: 200px;
+        height: 200px;
         display: block;
-        border-radius: 50%;
       }
       .hero article {
         /* height: 100vh; */
@@ -84,6 +103,13 @@
           margin-top: 2em;
           display: flex;
           gap: 1em;
+          & button:first-child {
+            background-color: var(--primary);
+            border: solid 2px var(--primary);
+            color: var(--surface);
+            padding: 1em 2em;
+            border-radius: 10px;
+          }
           & button {
             background-color: var(--surface);
             border: solid 2px var(--primary);
@@ -94,6 +120,7 @@
         }
       }
       .more {
+        height: calc(100vh - 4em);
         margin: 2em;
         border: solid 2px var(--border);
         padding: 2em;
@@ -104,6 +131,11 @@
           text-align: center;
           font-size: 2em;
           margin-bottom: 0.5em;
+        }
+        & p {
+          color: var(--muted);
+          text-align: center;
+          margin-top: 2em;
         }
       }
       aside {
@@ -116,6 +148,7 @@
         align-items: center;
         justify-content: center;
         background-color: var(--surface);
+        border: solid 1.6px var(--border);
         border-radius: 50%;
         cursor: pointer;
         box-shadow: var(--box-shadow);
@@ -138,7 +171,10 @@
   </head>
   <body>
     <section class="hero">
-      <img src="file_00000000b93081f7a03d55e11311c132.png" alt="" />
+      <img
+        src="file_00000000b93081f7a03d55e11311c132-removebg-preview.png"
+        alt=""
+      />
       <article>
         <h1>Welcome</h1>
         <h2>Jeff's Website</h2>
@@ -151,13 +187,16 @@
     <section class="more">
       <h3>About me</h3>
       <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam rem
-        doloremque molestiae sed. Soluta magni quos magnam, architecto
-        reiciendis ab voluptas quasi molestias quam optio reprehenderit
-        consequatur, distinctio quaerat odio. Ad, exercitationem assumenda
-        ipsum, quam tenetur provident eaque quasi necessitatibus ex, deserunt
-        fugiat quos sunt unde consequatur. Ea, vitae nulla.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis at rerum
+        sequi ad nemo vitae modi expedita corrupti fuga ipsum aspernatur minus
+        sint velit reiciendis accusantium, et deleniti explicabo. Necessitatibus
+        esse explicabo animi quidem rerum fugit iusto eius cupiditate recusandae
+        omnis exercitationem quod sed nemo praesentium, atque impedit expedita!
+        Pariatur molestiae aliquid voluptates ipsum labore dolorem cumque porro
+        magni illum tenetur delectus atque eos quaerat itaque optio, perferendis
+        quam alias cum, minima neque explicabo animi numquam impedit vel!
       </div>
+      <p>Portfolio: Work in progress...</p>
     </section>
     <aside>
       <svg
